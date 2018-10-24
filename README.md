@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Check working [Demo](https://deepakvijay.github.io/flight-search-engine/)
 
+### Note: To see searched data, Enter Pune to Bangalore for 1-Oct-2018 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
