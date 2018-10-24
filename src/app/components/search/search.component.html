@@ -1,0 +1,39 @@
+<section>
+  <input id="onw-way" type="radio" name="grp" />
+  <label for="onw-way" (click)="onTripTypeTabChange(true)">One Way</label>
+  <input id="return" type="radio" name="grp" checked="checked" />
+  <label for="return" (click)="onTripTypeTabChange(false)">Return</label>
+  <div class="search-form-area">
+    <form [formGroup]="searchForm">
+      <div class="input-group">
+        <!-- <input type="text" formControlName="origin" placeholder="Enter Origin City"> -->
+        <app-city-auto-complete [autocompleteGroup]="originGroup" searchPlaceholder="Enter Origin City"></app-city-auto-complete>
+      </div>
+      <div class="input-group">
+        <!-- <input type="text" formControlName="destination" placeholder="Enter Destination City"> -->
+        <app-city-auto-complete [autocompleteGroup]="destinationGroup" searchPlaceholder="Enter Destination City"></app-city-auto-complete>
+      </div>
+      <div class="input-group">
+        <input type="date" formControlName="departureDate" placeholder="YYYY-MM-DD" data-placeholder="Departure Date">
+      </div>
+      <div class="input-group" *ngIf="!isOneWaySearch">
+        <input type="date" formControlName="returnDate" placeholder="YYYY-MM-DD" data-placeholder="Return Date">
+      </div>
+      <div class="input-group">
+        <input type="number" formControlName="passengers" min=1 placeholder="Passengers">
+      </div>
+      <div class="input-group">
+        <button type="submit" (click)="onSearchFlights()" [disabled]="searchForm.invalid">Search</button>
+      </div>
+    </form>
+  </div>
+  <div class="refine-search">
+    <div class="input-group">
+      <span>Refine Flight Search</span>
+    </div>
+    <div class="input-group">
+      <h5>{{ refine }}</h5>
+      <input type="range" [(ngModel)]="refine" min="1000" max="10000" (change)="onPriceRangeChange($event)" step="100">
+    </div>
+  </div>
+</section>

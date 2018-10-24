@@ -1,0 +1,6 @@
+<div class="autocomplete" [formGroup]="autocompleteGroup">
+  <input type="text" [placeholder]="searchPlaceholder" formControlName="searchField">
+  <div class="city-list">
+    <div (click)="onCitySelection(search)" class="city" *ngFor="let search of searches">{{ search.name }}</div>
+  </div>
+</div>

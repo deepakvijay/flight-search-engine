@@ -1,0 +1,8 @@
+<div class="breadcrumbs" *ngIf="data">
+    <h3 *ngIf="data.isOneWay">{{data.origin}}&nbsp;<span>&#9992;</span>&nbsp;{{data.destination}}</h3>
+    <h3 *ngIf="!data.isOneWay">{{data.origin}}&nbsp;<span>&#9992;</span> &nbsp;{{data.destination}}&nbsp;<span>&#9992;</span>&nbsp;{{data.origin}}</h3>
+    <div class="flightTimingInfo">
+        <p>Departs:{{data.departureDate|date}}</p>
+        <p *ngIf="!data.isOneWay">Returns:{{data.returnDate |date}}</p>
+    </div>
+</div>

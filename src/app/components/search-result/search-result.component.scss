@@ -1,0 +1,33 @@
+.flex-grid {
+    display: flex;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: hsla(0, 0, 0, .2) 0 4px 2px -2px;
+    font-weight: 100;
+  }
+  .flex-grid .col {
+    flex: 1;
+  }
+  
+  @media (max-width: 400px) {
+    .flex-grid {
+      display: block;
+      .col {
+        width: 100%;
+        margin: 0 0 10px 0;
+      }
+    }
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    padding: 20px;
+  }
+  .flex-grid { 
+    margin: 0 0 20px 0;
+  }
+  .col {
+    padding: 30px;
+  }

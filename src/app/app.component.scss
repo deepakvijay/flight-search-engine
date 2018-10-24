@@ -1,0 +1,25 @@
+#container {
+    display: flex;
+    flex: 1;
+  }
+  #container > .search-result {
+    flex: 1;
+    background: #e5ded8;
+  }
+  #container > .search-box { 
+    flex: 0 0 20vw;
+    background: beige;
+    order: -1;
+  }
+  header, footer {
+    background: #375096;
+    color: #fff;
+  }
+  header, footer, .search-box, .search-result  {
+    padding: 1em;
+  }
+  @media screen and (max-width: 750px) {
+    #container {
+      display: block;
+    }
+  }

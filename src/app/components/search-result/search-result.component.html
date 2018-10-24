@@ -1,0 +1,50 @@
+<app-search-info></app-search-info>
+
+<div class="flex-grid" *ngFor="let search of flightDetails?.oneWayFlightDetails; let index= index">
+  <div class="col">
+    <div class="input-group">
+      <span>Rs. {{ search.fare }}</span>
+    </div>
+    <div class="input-group">
+      <span>{{search.flightNumber}}</span>
+    </div>
+    <div class="input-group">
+      <span>{{search.origin}} > {{search.destination}}</span>
+    </div>
+    <div class="input-group">
+      <span>Depart:</span>
+      <span>{{search.departTime}}</span>
+    </div>
+    <div class="input-group">
+      <span>Arrive:</span>
+      <span>{{search.arriveTime}}</span>
+    </div>
+  </div>
+  <div class="col" *ngIf="!search.isOneWay && flightDetails?.returnFlightDetails.length > 0 && flightDetails?.returnFlightDetails[index] !== undefined" >
+    <div class="input-group">
+      <span>Rs. {{ flightDetails.returnFlightDetails[index].fare }}</span>
+    </div>
+    <div class="input-group">
+      <span>{{ flightDetails.returnFlightDetails[index].flightNumber }}</span>
+    </div>
+    <div class="input-group">
+      <span>{{ flightDetails.returnFlightDetails[index].origin }} > {{ flightDetails.returnFlightDetails[index].destination }}</span>
+    </div>
+    <div class="input-group">
+      <span>Depart:</span>
+      <span>{{ flightDetails.returnFlightDetails[index].departTime }}</span>
+    </div>
+    <div class="input-group">
+      <span>Arrive:</span>
+      <span>{{ flightDetails.returnFlightDetails[index].arriveTime }}</span>
+    </div>
+  </div>
+  <div class="col">
+    <div class="input-group">
+      <img src="../../../assets/img/book-flight.png" width="100px" height="100px">
+    </div>
+    <div class="input-group">
+      <button type="button">Book this Flight</button>
+    </div>
+  </div>
+</div>
